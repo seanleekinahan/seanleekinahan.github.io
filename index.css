@@ -1,0 +1,92 @@
+:root {
+    --background: #f0f0f0;
+    --background-dark: #d5d5d5;
+    --divider: #aaa;
+    --primary: #4caf50;
+    --primary-light: #5dd862;
+    --secondary: #181818;
+    --secondary-transparent: #181818dd;
+    --text: #222;
+    --text-secondary: #666;
+    --text-inverse: #e0e0e0;
+    --gap: 5px;
+    --gap-lg: 16px;
+    --gap-break: 32px;
+    --gap-sm: 2px;
+    --radius: 6px;
+
+    color: var(--text);
+
+}
+
+@font-face {
+    font-family: suse;
+    src: url('./fonts/suse-regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: suse;
+    src: url('./fonts/suse-light.ttf') format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: suse;
+    src: url('./fonts/suse-bold.ttf') format("truetype");
+    font-weight: bold;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    font-family: suse, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto 1fr max-content;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.gutters {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 976px) {
+    .gutters {
+        padding: 0 var(--gap-lg);
+        max-width: unset;
+        margin: unset;
+    }
+}
+
+.page {
+    overflow-y: scroll;
+    height: 100%;
+    background-image: url("/img/wave.svg");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+
+h2, h3, h4 {
+    color: var(--text-secondary);
+}
